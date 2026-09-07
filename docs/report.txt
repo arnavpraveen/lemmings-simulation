@@ -1,0 +1,7 @@
+1. During each tick, StudentWorld::move() calls Trampoline::doSomething(), which delegates to StudentWorld::bounceLemmingAt() with the trampoline's coordinates. That function iterates over all actors at that position, checks isLemming(), and if true, computes bounce height as max(getFallDistance() - 1, 0) and calls startBouncing(height). startBouncing() returns false if already bouncing; otherwise it sets the lemming to BOUNCING state, stores the target height, and returns true. On success, bounceLemmingAt() plays SOUND_BOUNCE.
+
+After that, Lemming::doSomething() defers to doBouncing(). Each tick the lemming moves up one square if possible until m_bounceCurrent reaches m_bounceTarget or is blocked. Once the upward phase ends, the lemming attempts one horizontal step in its facing direction (reversing if blocked), then transitions to FALLING with m_fallDistance reset to 0.
+
+2. Everything is implemented correctly.
+
+3. Tools are displayed in a fixed order (T, N, P, S, <, >) instead of the level file order, which is allowed by the spec. The ice monster tick counter starts at 9 so it moves on its first tick, which matches the sample. Lemming tick counter starts at 2, so it first acts on its second tick, matching the sample.
