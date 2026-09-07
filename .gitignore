@@ -1,0 +1,16 @@
+# Build products
+*.o
+*.out
+build/
+DerivedData/
+
+# IDE and local state
+.DS_Store
+*.xcuserstate
+xcuserdata/
+
+# Supplied assets and local configuration
+Assets/
+.env
+.env.*
+!.env.example

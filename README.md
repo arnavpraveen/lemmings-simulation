@@ -48,9 +48,18 @@ When a trampoline and lemming occupy the same position, the world computes a bou
 - Event-driven simulation
 - Xcode project structure
 
+## Source code
+
+The `src/` directory contains my original actor hierarchy and world-management implementation:
+
+- `Actor.*` - actor types, per-tick behavior, hazards, tools, factories, and lemming state transitions
+- `StudentWorld.*` - level initialization, actor ownership, collision queries, scoring, and update orchestration
+
+[`docs/report.txt`](docs/report.txt) explains the trampoline interaction and bounce-state design. The source depends on the UCLA-supplied game framework. Framework files, build output, IDE user state, levels, sounds, and image assets are intentionally not redistributed, so this snapshot is intended for code review rather than as a standalone game download.
+
 ## Repository status
 
-This public repository documents the project without publishing academic starter code, instructor-provided framework files, copyrighted assets, or a complete course solution. Source can be discussed privately when appropriate.
+This repository includes my implementation code and design notes. Academic starter code, instructor-provided framework files, copyrighted assets, binaries, and local IDE state are excluded.
 
 ## Author
 
